@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/views/add_note_view.dart';
-import 'package:note_app/views/widget_view/app_bar_widget.dart';
-import 'package:note_app/views/widget_view/model_bottom_sheet_widegt.dart';
-import 'package:note_app/views/widget_view/note_item.dart';
+import 'package:note_app/views/widget_view/home_view_body_widget.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -11,7 +9,11 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add, size: 32),
+        backgroundColor: Colors.blueAccent,
+        shape: RoundedSuperellipseBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        child: Icon(Icons.add, size: 48),
 
         onPressed: () {
           showModalBottomSheet(
@@ -24,26 +26,7 @@ class HomeView extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          children: [
-            // Expanded(child: ListView()),
-            const SizedBox(height: 40),
-            // app bar
-            const AppBarWidget(),
-            const SizedBox(height: 20),
-            Expanded(
-              child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: NoteItem(),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
+        child: HomeViewBodyWidget(),
       ),
     );
   }

@@ -10,7 +10,7 @@ class ModelBottomSheetWidegt extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(24)),
-      child: Column(
+      child: const Column(
         children: [
           SizedBox(height: 50),
           CustomTextFormFieldWidegt(
