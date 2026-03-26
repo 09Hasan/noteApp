@@ -10,7 +10,7 @@ class ModelBottomSheetWidegt extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(24)),
       child: Column(
-        children: const [
+        children: [
           SizedBox(height: 50),
           CustomTextFormFieldWidegt(
             hint: 'Enter your note title',
@@ -21,6 +21,24 @@ class ModelBottomSheetWidegt extends StatelessWidget {
             label: 'Content',
             hint: 'Enter your note content',
             maxLines: 5,
+          ),
+          Spacer(),
+          InkWell(
+            onTap: () {},
+            child: Container(
+              margin: EdgeInsets.only(bottom: 32),
+              padding: EdgeInsets.symmetric(vertical: 12),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Center(
+                child: Text(
+                  'Save',
+                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
           ),
         ],
       ),

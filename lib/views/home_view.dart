@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/views/add_note_view.dart';
 import 'package:note_app/views/widget_view/app_bar_widget.dart';
 import 'package:note_app/views/widget_view/model_bottom_sheet_widegt.dart';
 import 'package:note_app/views/widget_view/note_item.dart';
@@ -16,7 +17,7 @@ class HomeView extends StatelessWidget {
           showModalBottomSheet(
             context: context,
             builder: (context) {
-              return ModelBottomSheetWidegt();
+              return AddNoteView();
             },
           );
         },
