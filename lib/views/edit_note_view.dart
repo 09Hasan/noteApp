@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/views/widget_view/custom_app_bar_widget.dart';
 import 'package:note_app/views/widget_view/custom_text_form_field_widegt.dart';
 
 class EditNoteView extends StatelessWidget {
@@ -11,7 +12,9 @@ class EditNoteView extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
-            SizedBox(height: 100),
+            SizedBox(height: 40),
+            CustomAppBarWidget(title: 'Edit Note', icon: Icons.check),
+            SizedBox(height: 30),
             CustomTextFormFieldWidegt(
               hint: 'Enter your note title',
               label: 'Title',

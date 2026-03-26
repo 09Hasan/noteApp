@@ -8,16 +8,18 @@ class CustomButtonWidget extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        margin: EdgeInsets.only(bottom: 32),
-        padding: EdgeInsets.symmetric(vertical: 12),
+        padding: EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.circular(16),
         ),
-        child: Center(
-          child: Text(
-            'Save',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: Center(
+            child: Text(
+              'Save',
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            ),
           ),
         ),
       ),

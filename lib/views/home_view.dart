@@ -8,6 +8,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // add button 
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blueAccent,
         shape: RoundedSuperellipseBorder(
@@ -17,6 +18,9 @@ class HomeView extends StatelessWidget {
 
         onPressed: () {
           showModalBottomSheet(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
             context: context,
             builder: (context) {
               return AddNoteView();

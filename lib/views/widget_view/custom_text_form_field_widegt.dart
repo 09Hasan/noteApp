@@ -21,7 +21,7 @@ class CustomTextFormFieldWidegt extends StatelessWidget {
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.white, width: 2),
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(8),
         ),
         errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.redAccent, width: 2),

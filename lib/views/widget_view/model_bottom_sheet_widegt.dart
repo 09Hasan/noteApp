@@ -9,23 +9,27 @@ class ModelBottomSheetWidegt extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(24)),
-      child: const Column(
-        children: [
-          SizedBox(height: 50),
-          CustomTextFormFieldWidegt(
-            hint: 'Enter your note title',
-            label: 'Title',
-          ),
-          SizedBox(height: 30),
-          CustomTextFormFieldWidegt(
-            label: 'Content',
-            hint: 'Enter your note content',
-            maxLines: 5,
-          ),
-          Spacer(),
-          CustomButtonWidget(),
-        ],
+      // decoration: BoxDecoration(borderRadius: BorderRadius.circular(24)),
+      child: SingleChildScrollView(
+        child: const Column(
+          children: [
+            SizedBox(height: 50),
+            CustomTextFormFieldWidegt(
+              hint: 'Enter your note title',
+              label: 'Title',
+            ),
+            SizedBox(height: 30),
+            CustomTextFormFieldWidegt(
+              label: 'Content',
+              hint: 'Enter your note content',
+              maxLines: 5,
+            ),
+            SizedBox(height: 30),
+            // Spacer(),
+            CustomButtonWidget(),
+            SizedBox(height: 25),
+          ],
+        ),
       ),
     );
   }

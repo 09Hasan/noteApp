@@ -1,31 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/views/widget_view/app_bar_widget.dart';
+import 'package:note_app/views/widget_view/custom_app_bar_widget.dart';
 import 'package:note_app/views/widget_view/note_item.dart';
+import 'package:note_app/views/widget_view/notes_list_view_widget.dart';
 
 class HomeViewBodyWidget extends StatelessWidget {
   const HomeViewBodyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-     return Column(
+    return Column(
       children: [
         // Expanded(child: ListView()),
         const SizedBox(height: 40),
         // app bar
-        const AppBarWidget(),
+        const CustomAppBarWidget(title: 'Note App', icon: Icons.search),
         const SizedBox(height: 20),
-        Expanded(
-          child: ListView.builder(
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: NoteItem(),
-              );
-            },
-          ),
-        ),
+        Expanded(child: NotesListViewWidget()),
       ],
     );
- }
+  }
 }
