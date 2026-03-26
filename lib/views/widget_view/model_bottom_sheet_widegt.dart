@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/views/widget_view/custom_button_widget.dart';
 import 'package:note_app/views/widget_view/custom_text_form_field_widegt.dart';
 
 class ModelBottomSheetWidegt extends StatelessWidget {
@@ -23,23 +24,7 @@ class ModelBottomSheetWidegt extends StatelessWidget {
             maxLines: 5,
           ),
           Spacer(),
-          InkWell(
-            onTap: () {},
-            child: Container(
-              margin: EdgeInsets.only(bottom: 32),
-              padding: EdgeInsets.symmetric(vertical: 12),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Center(
-                child: Text(
-                  'Save',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          ),
+          CustomButtonWidget(),
         ],
       ),
     );
