@@ -6,18 +6,20 @@ class CustomTextFormFieldWidegt extends StatelessWidget {
     this.maxLines = 1,
     required this.label,
     required this.hint,
+    this.validator,
+    this.onSaved,
   });
   final int maxLines;
   final String label;
   final String hint;
-
+  final String? Function(String?)? validator;
+  final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
       maxLines: maxLines,
-      onChanged: (value) {
-        debugPrint(value);
-      },
+      onSaved: onSaved,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.white, width: 2),

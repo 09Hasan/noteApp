@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/views/widget_view/custom_button_widget.dart';
 import 'package:note_app/views/widget_view/custom_text_form_field_widegt.dart';
+import 'package:note_app/views/widget_view/note_add_form.dart';
 
 class ModelBottomSheetWidegt extends StatelessWidget {
   const ModelBottomSheetWidegt({super.key});
@@ -10,27 +11,8 @@ class ModelBottomSheetWidegt extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       // decoration: BoxDecoration(borderRadius: BorderRadius.circular(24)),
-      child: SingleChildScrollView(
-        child: const Column(
-          children: [
-            SizedBox(height: 50),
-            CustomTextFormFieldWidegt(
-              hint: 'Enter your note title',
-              label: 'Title',
-            ),
-            SizedBox(height: 30),
-            CustomTextFormFieldWidegt(
-              label: 'Content',
-              hint: 'Enter your note content',
-              maxLines: 5,
-            ),
-            SizedBox(height: 30),
-            // Spacer(),
-            CustomButtonWidget(),
-            SizedBox(height: 25),
-          ],
-        ),
-      ),
+      child: SingleChildScrollView(child: NoteAddForm()),
     );
   }
 }
+
