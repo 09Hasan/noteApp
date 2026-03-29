@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/views/widget_view/custom_button_widget.dart';
-import 'package:note_app/views/widget_view/custom_text_form_field_widegt.dart';
 import 'package:note_app/views/widget_view/note_add_form.dart';
 
 class ModelBottomSheetWidegt extends StatelessWidget {
