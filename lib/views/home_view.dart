@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note_app/Cubits/addNoteViewCubit/add_note_view_cubit.dart';
 import 'package:note_app/views/add_note_view.dart';
 import 'package:note_app/views/widget_view/home_view_body_widget.dart';
 
@@ -8,7 +10,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // add button 
+      // add button
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blueAccent,
         shape: RoundedSuperellipseBorder(
@@ -23,7 +25,12 @@ class HomeView extends StatelessWidget {
             ),
             context: context,
             builder: (context) {
-              return AddNoteView();
+              return BlocProvider(
+                create: (context) {
+                  return AddNoteViewCubit();
+                },
+                child: const AddNoteView(),
+              );
             },
           );
         },
