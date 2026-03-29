@@ -25,12 +25,7 @@ class HomeView extends StatelessWidget {
             ),
             context: context,
             builder: (context) {
-              return BlocProvider(
-                create: (context) {
-                  return AddNoteViewCubit();
-                },
-                child: const AddNoteView(),
-              );
+              return const AddNoteView();
             },
           );
         },
