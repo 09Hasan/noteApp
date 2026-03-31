@@ -11,7 +11,12 @@ class ModelBottomSheetWidegt extends StatelessWidget {
     return BlocProvider(
       create: (context) => AddNoteViewCubit(),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
+        padding: EdgeInsets.only(
+          left: 24,
+          right: 24,
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+          top: 24,
+        ),
         // decoration: BoxDecoration(borderRadius: BorderRadius.circular(24)),
         child: SingleChildScrollView(child: NoteAddForm()),
       ),
