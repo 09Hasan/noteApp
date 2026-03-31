@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
-
+  const NoteItem({super.key, required this.note});
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.orangeAccent,
+        color: Color(note.color),
       ),
       child: InkWell(
         onTap: () {
@@ -33,8 +34,8 @@ class NoteItem extends StatelessWidget {
                   horizontal: 16,
                   vertical: 8,
                 ),
-                title: const Text(
-                  'A new note',
+                title: Text(
+                  note.title,
                   style: TextStyle(fontSize: 42, color: Colors.black),
                 ),
                 trailing: IconButton(
@@ -47,8 +48,8 @@ class NoteItem extends StatelessWidget {
                 ),
                 subtitle: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12.0),
-                  child: const Text(
-                    'Build your note pjnkbppppghghfghgfhgff',
+                  child: Text(
+                    note.content,
                     style: TextStyle(fontSize: 24, color: Colors.black54),
                   ),
                 ),
@@ -56,7 +57,7 @@ class NoteItem extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 32.0),
                 child: Text(
-                  '20/2/2025',
+                  note.date,
                   style: TextStyle(fontSize: 24, color: Colors.black),
                 ),
               ),
