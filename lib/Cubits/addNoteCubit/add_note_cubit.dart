@@ -1,4 +1,6 @@
 // ignore: depend_on_referenced_packages
+import 'dart:ffi';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hive/hive.dart';
@@ -10,12 +12,14 @@ part 'add_note_state.dart';
 
 class AddNoteCubit extends Cubit<AddNoteCubitState> {
   AddNoteCubit() : super(AddNoteInitial());
-  var notesBox = Hive.box<NoteModel>(kNotesBoxName);
   //add note to hive box
-  void addNote(NoteModel note) {
+  void addNote(NoteModel note) async {
     try {
+      var notesBox = Hive.box<NoteModel>(kNotesBoxName);
+
       emit(AddNoteLoading());
-      notesBox.add(note);
+      await notesBox.add(note);
+      // debugPrint(Hive.box<NoteModel>(kNotesBoxName).values.length.toString());
       emit(AddNoteSuccess());
     } catch (e) {
       debugPrint(e.toString());

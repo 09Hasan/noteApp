@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/Cubits/home_view_cubit/home_view_cubit.dart';
+import 'package:note_app/Cubits/notes_list_cubit/notes_list_cubit.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:note_app/Cubits/addNoteViewCubit/add_note_view_cubit.dart';
 import 'package:note_app/views/widget_view/home_view_body_widget.dart';
@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeViewCubit(),
+      create: (context) => NotesListCubit(),
       child: Scaffold(
         // add button
         floatingActionButton: FloatingActionButton(
