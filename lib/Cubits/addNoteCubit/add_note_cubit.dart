@@ -6,11 +6,12 @@ import 'package:hive/hive.dart';
 import 'package:note_app/Cubits/constants.dart';
 import 'package:note_app/models/note_model.dart';
 
-part 'add_note_cubit_state.dart';
+part 'add_note_state.dart';
 
-class AddNoteViewCubit extends Cubit<AddNoteCubitState> {
-  AddNoteViewCubit() : super(AddNoteInitial());
+class AddNoteCubit extends Cubit<AddNoteCubitState> {
+  AddNoteCubit() : super(AddNoteInitial());
   var notesBox = Hive.box<NoteModel>(kNotesBoxName);
+  //add note to hive box
   void addNote(NoteModel note) {
     try {
       emit(AddNoteLoading());

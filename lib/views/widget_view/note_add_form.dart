@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/Cubits/addNoteViewCubit/add_note_view_cubit.dart';
+import 'package:note_app/Cubits/addNoteCubit/add_note_cubit.dart';
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/widget_view/custom_button_widget.dart';
 import 'package:note_app/views/widget_view/custom_text_form_field_widegt.dart';
@@ -67,7 +67,7 @@ class _NoteAddFormState extends State<NoteAddForm> {
                   date: DateTime.now().toString(),
                   color: Colors.amber.toARGB32(),
                 );
-                BlocProvider.of<AddNoteViewCubit>(context).addNote(note);
+                BlocProvider.of<AddNoteCubit>(context).addNote(note);
                 Navigator.pop(context);
               } else {
                 setState(() {
