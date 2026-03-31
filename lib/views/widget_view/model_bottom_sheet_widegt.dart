@@ -8,14 +8,12 @@ class ModelBottomSheetWidegt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      // decoration: BoxDecoration(borderRadius: BorderRadius.circular(24)),
-      child: SingleChildScrollView(
-        child: BlocProvider(
-          create: (context) => AddNoteViewCubit(),
-          child: NoteAddForm(),
-        ),
+    return BlocProvider(
+      create: (context) => AddNoteViewCubit(),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        // decoration: BoxDecoration(borderRadius: BorderRadius.circular(24)),
+        child: SingleChildScrollView(child: NoteAddForm()),
       ),
     );
   }
