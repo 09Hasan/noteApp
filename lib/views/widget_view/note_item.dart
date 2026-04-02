@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:note_app/Cubits/notes_list_cubit/notes_list_cubit.dart';
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/edit_note_view.dart';
+import 'package:provider/provider.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key, required this.note});
   final NoteModel note;
   @override
   Widget build(BuildContext context) {
+    // var cubit = Provider.of<NotesListCubit>(context);
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
@@ -39,7 +42,13 @@ class NoteItem extends StatelessWidget {
                   style: TextStyle(fontSize: 42, color: Colors.black),
                 ),
                 trailing: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    note.delete();
+                    Provider.of<NotesListCubit>(
+                      context,
+                      listen: false,
+                ).fetchAllNotes();
+                  },
                   icon: Icon(
                     FontAwesomeIcons.trash.data,
                     size: 40,

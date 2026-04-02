@@ -14,4 +14,12 @@ class NotesListCubit extends Cubit<NotesListState> {
   List<NoteModel> notesList = Hive.box<NoteModel>(
     kNotesBoxName,
   ).values.toList();
+  void fetchAllNotes() {
+    notesList = Hive.box<NoteModel>(kNotesBoxName).values.toList();
+    emit(NotesListChanged());
+  }
+
+  // void deleteNote(int index) {
+  //   Hive.box<NoteModel>(kNotesBoxName).deleteAt(index);
+  // }
 }
