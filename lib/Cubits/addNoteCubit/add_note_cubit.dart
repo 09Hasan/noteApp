@@ -1,6 +1,6 @@
 // ignore: depend_on_referenced_packages
-import 'dart:ffi';
 
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hive/hive.dart';
