@@ -1,29 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/Cubits/notes_list_cubit/notes_list_cubit.dart';
+import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/widget_view/custom_app_bar_widget.dart';
 import 'package:note_app/views/widget_view/custom_text_form_field_widegt.dart';
+import 'package:provider/provider.dart';
 
-class EditNoteView extends StatelessWidget {
-  const EditNoteView({super.key});
+class EditNoteView extends StatefulWidget {
+  const EditNoteView({super.key, required this.note});
+  final NoteModel note;
 
+  @override
+  State<EditNoteView> createState() => _EditNoteViewState();
+}
+
+class _EditNoteViewState extends State<EditNoteView> {
+  String? title;
+  String? content;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
-            SizedBox(height: 40),
-            CustomAppBarWidget(title: 'Edit Note', icon: Icons.check),
-            SizedBox(height: 30),
-            CustomTextFormFieldWidegt(
-              hint: 'Enter your note title',
-              label: 'Title',
+            const SizedBox(height: 40),
+            CustomAppBarWidget(
+              title: 'Edit Note',
+              icon: Icons.check,
+              onPressed: () {
+                widget.note.title = title ?? widget.note.title;
+                widget.note.content = content ?? widget.note.content;
+                widget.note.save();
+                Provider.of<NotesListCubit>(
+                  context,
+                  listen: false,
+                ).fetchAllNotes();
+                Navigator.pop(context);
+              },
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             CustomTextFormFieldWidegt(
-              label: 'Content',
-              hint: 'Enter your note content',
+              initValue: widget.note.title,
+              hint: widget.note.title,
+              label: 'New Title',
+              onChaged: (value) {
+                widget.note.title = value;
+              },
+            ),
+            const SizedBox(height: 30),
+            CustomTextFormFieldWidegt(
+              initValue: widget.note.content,
+              label: 'New Content',
+              hint: widget.note.content,
               maxLines: 5,
+              onChaged: (value) {
+                widget.note.content = value;
+              },
             ),
           ],
         ),

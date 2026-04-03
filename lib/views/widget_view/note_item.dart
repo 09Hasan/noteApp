@@ -22,7 +22,7 @@ class NoteItem extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return EditNoteView();
+                return EditNoteView(note: note);
               },
             ),
           );
@@ -47,7 +47,7 @@ class NoteItem extends StatelessWidget {
                     Provider.of<NotesListCubit>(
                       context,
                       listen: false,
-                ).fetchAllNotes();
+                    ).fetchAllNotes();
                   },
                   icon: Icon(
                     FontAwesomeIcons.trash.data,

@@ -5,10 +5,12 @@ class CustomAppBarWidget extends StatelessWidget {
     super.key,
     required this.title,
     required this.icon,
+    this.onPressed,
   });
 
   final String title;
   final IconData icon;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,7 +25,7 @@ class CustomAppBarWidget extends StatelessWidget {
             color: Colors.white.withOpacity(0.05),
             borderRadius: BorderRadius.circular(16),
           ),
-          child: IconButton(onPressed: () {}, icon: Icon(icon, size: 48)),
+          child: IconButton(onPressed: onPressed, icon: Icon(icon, size: 48)),
         ),
       ],
     );
