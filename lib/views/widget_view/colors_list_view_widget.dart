@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/Cubits/addNoteCubit/add_note_cubit.dart';
 import 'package:note_app/constants.dart';
 import 'package:note_app/views/widget_view/colors_list_item.dart';
+import 'package:provider/provider.dart';
 
 class ColorsListViewWidget extends StatefulWidget {
   const ColorsListViewWidget({super.key});
@@ -24,10 +26,11 @@ class _ColorsListViewWidgetState extends State<ColorsListViewWidget> {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: InkWell(
-              
               onTap: () {
                 setState(() {
                   selectedIndex = index;
+                  Provider.of<AddNoteCubit>(context, listen: false).colorNote =
+                      kColorsList[index];
                 });
               },
               child: ColorsListItem(

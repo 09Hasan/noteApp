@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/Cubits/addNoteCubit/add_note_cubit.dart';
 import 'package:note_app/Cubits/notes_list_cubit/notes_list_cubit.dart';
+import 'package:note_app/constants.dart';
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/widget_view/colors_list_view_widget.dart';
 import 'package:note_app/views/widget_view/custom_button_widget.dart';
@@ -57,7 +58,7 @@ class _NoteAddFormState extends State<NoteAddForm> {
             maxLines: 5,
           ),
           const SizedBox(height: 30),
-          ColorsListViewWidget(),
+          const ColorsListViewWidget(),
           // Spacer(),
           const SizedBox(height: 30),
 
@@ -67,12 +68,12 @@ class _NoteAddFormState extends State<NoteAddForm> {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
                 String currenDate =
-                    '${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${DateTime.now().hour}:${DateTime.now().hour}';
+                    '${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day} ${DateTime.now().hour}:${DateTime.now().minute}';
                 NoteModel note = NoteModel(
                   title: title!,
                   content: content!,
                   date: currenDate,
-                  color: Colors.blueAccent.toARGB32(),
+                  color: kColorsList[0].toARGB32(),
                 );
                 BlocProvider.of<AddNoteCubit>(context).addNote(note);
                 BlocProvider.of<NotesListCubit>(context).fetchAllNotes();

@@ -41,20 +41,24 @@ class _EditNoteViewState extends State<EditNoteView> {
             const SizedBox(height: 30),
             CustomTextFormFieldWidegt(
               initValue: widget.note.title,
-              hint: widget.note.title,
+              hint: 'Enter a new title',
               label: 'New Title',
               onChaged: (value) {
-                widget.note.title = value;
+                if (value.isNotEmpty) {
+                  title = value;
+                }
               },
             ),
             const SizedBox(height: 30),
             CustomTextFormFieldWidegt(
               initValue: widget.note.content,
               label: 'New Content',
-              hint: widget.note.content,
+              hint: 'Enter a new content',
               maxLines: 5,
               onChaged: (value) {
-                widget.note.content = value;
+                if (value.isNotEmpty) {
+                  content = value;
+                }
               },
             ),
           ],
