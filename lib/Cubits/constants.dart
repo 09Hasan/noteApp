@@ -1,1 +1,0 @@
-const String kNotesBoxName = 'notes_box';

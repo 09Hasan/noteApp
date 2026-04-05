@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/constants.dart';
 
 class CustomAppBarWidget extends StatelessWidget {
   const CustomAppBarWidget({
@@ -17,15 +18,22 @@ class CustomAppBarWidget extends StatelessWidget {
       children: [
         Text(
           title,
-          style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: kPrimaryColor,
+          ),
         ),
         const Spacer(),
         Container(
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.05),
+            color: Colors.white.withAlpha(20),
             borderRadius: BorderRadius.circular(16),
           ),
-          child: IconButton(onPressed: onPressed, icon: Icon(icon, size: 48)),
+          child: IconButton(
+            onPressed: onPressed,
+            icon: Icon(icon, size: 48, color: kPrimaryColor),
+          ),
         ),
       ],
     );

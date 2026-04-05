@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/Cubits/addNoteCubit/add_note_cubit.dart';
 import 'package:note_app/Cubits/notes_list_cubit/notes_list_cubit.dart';
 import 'package:note_app/models/note_model.dart';
+import 'package:note_app/views/widget_view/colors_list_view_widget.dart';
 import 'package:note_app/views/widget_view/custom_button_widget.dart';
 import 'package:note_app/views/widget_view/custom_text_form_field_widegt.dart';
 
@@ -56,7 +57,10 @@ class _NoteAddFormState extends State<NoteAddForm> {
             maxLines: 5,
           ),
           const SizedBox(height: 30),
+          ColorsListViewWidget(),
           // Spacer(),
+          const SizedBox(height: 30),
+
           CustomButtonWidget(
             // Process the form data
             onTap: () {

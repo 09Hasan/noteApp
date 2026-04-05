@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/constants.dart';
 
 class CustomButtonWidget extends StatelessWidget {
   const CustomButtonWidget({super.key, this.onTap});
@@ -8,17 +9,21 @@ class CustomButtonWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 16),
+        padding: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
-          color: Colors.blue,
+          color: kPrimaryColor,
           borderRadius: BorderRadius.circular(16),
         ),
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
-          child: Center(
+          child: const Center(
             child: Text(
-              'Save',
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              'Add',
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
             ),
           ),
         ),

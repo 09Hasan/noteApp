@@ -5,7 +5,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hive/hive.dart';
 // ignore: depend_on_referenced_packages
-import 'package:note_app/Cubits/constants.dart';
+import 'package:note_app/constants.dart';
 import 'package:note_app/models/note_model.dart';
 
 part 'add_note_state.dart';

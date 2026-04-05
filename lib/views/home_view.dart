@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/constants.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:note_app/Cubits/notes_list_cubit/notes_list_cubit.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,11 +15,16 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       // add button
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.white,
         shape: RoundedSuperellipseBorder(
           borderRadius: BorderRadius.circular(24),
         ),
-        child: Icon(Icons.add, size: 48),
+        child: Icon(
+          Icons.add,
+          size: 48,
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
 
         onPressed: () {
           showModalBottomSheet(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/constants.dart';
 
 class CustomTextFormFieldWidegt extends StatelessWidget {
   const CustomTextFormFieldWidegt({
@@ -33,19 +34,20 @@ class CustomTextFormFieldWidegt extends StatelessWidget {
         ),
         errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.redAccent, width: 2),
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(8),
         ),
-        label: Text(label, style: const TextStyle(color: Colors.white)),
-        hint: Text(hint, style: const TextStyle(color: Colors.white)),
-
+        label: Text(label, style: const TextStyle(color: kPrimaryColor)),
+        hint: Text(hint, style: const TextStyle(color: kPrimaryColor)),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: kPrimaryColor, width: 2),
+        ),
         border: OutlineInputBorder(
-          // borderSide: BorderSide(
-          //   color: Colors.orangeAccent,
-          //   width: 15,
-          // ),
-          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(color: Colors.pink, width: 2),
+          borderRadius: BorderRadius.circular(8),
         ),
       ),
+      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
     );
   }
 }
